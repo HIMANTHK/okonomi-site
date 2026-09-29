@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How it works | Okonomi</title>
+<meta name="description" content="How to set up Okonomi in an afternoon, what hardware you need, how billing keeps working offline, and how we help you switch from your current system.">
+<meta property="og:title" content="How it works">
+<meta property="og:description" content="How to set up Okonomi in an afternoon, what hardware you need, how billing keeps working offline, and how we help you switch from your current system.">
+<meta property="og:image" content="https://okonomi.in/brand/logo-stacked-1024.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://okonomi.in/how-it-works.html">
+<link rel="icon" href="brand/favicon.ico" sizes="48x48">
+<link rel="icon" href="brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<meta name="theme-color" content="#D84428">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Okonomi home">
+      <img class="on-light" src="brand/logo.svg" alt="okonomi" width="195" height="34">
+      <img class="on-dark" src="brand/logo-dark.svg" alt="okonomi" width="195" height="34">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html" aria-current="page">How it works</a>
+        <a href="solutions.html">Who it’s for</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+    </nav>
+    <div class="header-cta">
+            <a class="btn btn-primary" href="contact.html">Book a demo</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Selling on Okonomi by this afternoon</h1>
+    <p class="lede">No installation visit and no new counter. Sign up on the tablet you already have, bring your menu, and hand out PINs.</p>
+  </div>
+</section>
+
+<section style="padding-top:0" aria-labelledby="setup-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="setup-title">Setting up</h2>
+      <p class="muted">A short wizard walks you through it. We'll do it with you on a call if you'd rather.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Create your account</h3><p>Restaurant name, your mobile number and a password. The tablet you sign up on is ready to bill, and you get your own PIN.</p></li>
+      <li><h3>Bring your menu</h3><p>Upload the spreadsheet you already have. Set different prices for dine-in, takeaway, Swiggy and Zomato if you use them.</p></li>
+      <li><h3>Lay out your floor</h3><p>Say how many tables and seats. Drag them into place later if the map matters to you.</p></li>
+      <li><h3>Hand out PINs</h3><p>Each person gets a 4-digit PIN and a role, and sees only what that role needs.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="offline" class="band" aria-labelledby="offline-title" style="scroll-margin-top:80px">
+  <div class="wrap split">
+    <div class="section-head" style="margin:0">
+      <h2 id="offline-title">Switch the Wi-Fi off. Keep billing.</h2>
+      <p class="lede">Bills, payments and table changes are saved on the tablet first, then sent up in the order they happened. If the same bill is sent twice, it's counted once.</p>
+      <ul class="ticklist">
+        <li>Cash and card work offline. You set the limit for card payments taken without a connection.</li>
+        <li>Kitchen tickets keep reaching kitchen screens through a small in-store box on your Wi-Fi.</li>
+        <li>If two tablets change the same table offline, the latest change wins, and anything that needs a look goes to the manager.</li>
+      </ul>
+      <p class="muted small">Try it: add a dish, charge it, switch the Wi-Fi off, charge another, then switch it back on.</p>
+    </div>
+    <div class="till" id="till">
+      <div class="till-bar">
+        <span>Counter 1</span>
+        <span class="status" id="till-status">Online</span>
+        <label class="switch"><input type="checkbox" id="wifi" checked> Wi-Fi</label>
+      </div>
+      <div class="till-body">
+        <div class="menu-pad" id="menu-pad">
+          <button class="dish" type="button" data-name="Masala chai" data-price="40">Masala chai<span>₹40</span></button>
+          <button class="dish" type="button" data-name="Filter coffee" data-price="60">Filter coffee<span>₹60</span></button>
+          <button class="dish" type="button" data-name="Veg sandwich" data-price="120">Veg sandwich<span>₹120</span></button>
+          <button class="dish" type="button" data-name="Paneer roll" data-price="150">Paneer roll<span>₹150</span></button>
+        </div>
+        <div class="bill-pane">
+          <div class="bill-lines" id="bill-lines" aria-live="polite"></div>
+          <div class="bill-total"><span>Total incl. 5% GST</span><span id="bill-total">₹0</span></div>
+          <button class="pay" id="pay" type="button" disabled>Charge cash</button>
+          <div class="queue" id="queue" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="log" id="log" aria-label="What the till did"></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="hardware-title">
+  <div class="wrap split" style="align-items:start">
+    <div class="section-head" style="margin:0">
+      <h2 id="hardware-title">What you need at the counter</h2>
+      <p class="lede">Okonomi runs in the browser, so most restaurants already have what it needs.</p>
+    </div>
+    <div class="panel">
+      <div class="row"><span>Counter</span><span class="v">Android tablet, iPad or laptop with Chrome</span></div>
+      <div class="row"><span>Kitchen screen</span><span class="v">Any tablet or a TV with a browser</span></div>
+      <div class="row"><span>Printer</span><span class="v">80 mm thermal, USB or network</span></div>
+      <div class="row"><span>Card payments</span><span class="v">Your processor's terminal</span></div>
+      <div class="row"><span>Offline kitchen box</span><span class="v">Optional mini-PC on your Wi-Fi</span></div>
+      <div class="row"><span>Internet</span><span class="v">Any broadband or 4G hotspot</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="switch-title">
+  <div class="wrap split" style="align-items:start">
+    <div class="section-head" style="margin:0">
+      <h2 id="switch-title">Switching from another system</h2>
+      <p class="lede">You don't have to stop trading to move over. Most restaurants run both side by side for a day and then switch.</p>
+    </div>
+    <div style="display:grid;gap:18px">
+      <div><h3>Your menu</h3><p class="muted">Export it as a spreadsheet from your current system and upload it. Items with the same name update instead of duplicating.</p></div>
+      <div><h3>Your delivery apps</h3><p class="muted">We connect your Swiggy and Zomato stores during setup. Your ratings and listings stay as they are.</p></div>
+      <div><h3>Your payments</h3><p class="muted">Connect your own Razorpay account in Settings. Money keeps settling to your bank as before.</p></div>
+      <div><h3>Your team</h3><p class="muted">Show one person how to ring up a bill and they can teach the rest. PIN sign-in takes seconds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="support-title">
+  <div class="wrap faq-grid">
+    <div class="section-head">
+      <h2 id="support-title">Help when you need it</h2>
+      <p class="muted">Service doesn't keep office hours, so neither do we for outages.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>How do I reach support?</summary><div><p>Email support@okonomi.in any time. Outages that stop you billing or cooking are answered around the clock.</p></div></details>
+      <details><summary>Do you help with setup?</summary><div><p>Yes. Book a demo and we'll load your menu, set up tables and staff, and walk your team through a service on a call.</p></div></details>
+      <details><summary>What if a tablet is lost or stolen?</summary><div><p>Revoke it from Settings. It's signed out straight away and its local data is wiped the next time it connects.</p></div></details>
+      <details><summary>Will updates interrupt service?</summary><div><p>Updates arrive in the background and apply at a quiet moment, without signing anyone out.</p></div></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="cta-band" aria-label="Get started">
+  <div class="wrap">
+    <div class="section-head" style="margin:0">
+      <h2>Pick the parts you need. Add more as you grow.</h2>
+      <p>Try it free for 14 days on your own menu, or book a 20-minute demo and we will set it up with you.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html?trial=1">Start free trial</a>
+      <a class="btn btn-ghost" href="contact.html">Book a demo</a>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div style="display:grid;gap:14px;align-content:start">
+        <a class="footer-logo" href="index.html"><img src="brand/logo-dark.svg" alt="okonomi" width="183" height="32"></a>
+        <p>Billing, kitchen, delivery, stock and staff for restaurants and cafés in India. Okonomi means “as you like it”.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="product.html">Features</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="how-it-works.html#offline">Offline billing</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="solutions.html">Who it’s for</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+                    <li><a href="contact.html">Book a demo</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Okonomi. Made for restaurants in India.</span>
+      <span>Prices exclude GST.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
