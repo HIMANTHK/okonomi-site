@@ -123,6 +123,8 @@
     const done = $('form-done');
     // Arriving from "Start free trial" before online signup opens: keep the plan they picked.
     const q = new URLSearchParams(location.search);
+    // "Talk to us about custom" preselects the custom topic.
+    if (q.get('topic') === 'custom') { const sel = $('f-topic'); if (sel) sel.value = 'A custom set-up'; }
     const chosen = { starter: 'Starter', growth: 'Growth', pro: 'Pro' }[q.get('plan')] ?? null;
     const note = $('trial-note');
     if (q.has('trial') && note) {
